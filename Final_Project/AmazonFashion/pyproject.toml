@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "AmazonFashion"
+version = "0.1.1"
+description = "Downloaded at https://www.kaggle.com/rishidamarla/amazoncom-fashion-products, The dataset has 10000 products listings from Amazon UK created by PromptCloud's in-house web-crawling service. I used the free dataset as original data source, and programmed some functions to help current or potential sellers on Amazon UK."
+authors = ["Zhiwen Huang"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.3.4"
+matplotlib = "3.5.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
