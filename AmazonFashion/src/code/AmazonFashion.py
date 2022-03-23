@@ -41,7 +41,7 @@ df_all = pd.concat([df, df_t, df_star, df_price], axis = 1)
 
 
 
-
+""" Function 1: return list of column names """
 def column_names():
     return [column for column in df_all]
     """
