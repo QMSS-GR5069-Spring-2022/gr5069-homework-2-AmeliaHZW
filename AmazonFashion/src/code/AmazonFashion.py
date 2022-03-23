@@ -59,7 +59,7 @@ def column_names():
 
 
 
-
+""" Function 2: List of unique values for selected column"""
 def value_list(column = 'cat1'):
     """
     Using this function, you can get a list of unique values for a selected column.
