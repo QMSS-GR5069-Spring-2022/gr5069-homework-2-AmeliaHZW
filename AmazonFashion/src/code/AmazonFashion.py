@@ -19,7 +19,7 @@ cwd = os.getcwd()
 """ Load in Data """
 df = pd.read_csv('amazon_co-ecommerce_sample.csv')
 
-""" Preprocessing and Wrangeling """
+""" Prepare Data Analysis: Preprocessing and Wrangeling """
 df_t = pd.DataFrame()
 df_cat = df['amazon_category_and_sub_category'].str.split('>',expand = True)
 for i in range(0,5):
