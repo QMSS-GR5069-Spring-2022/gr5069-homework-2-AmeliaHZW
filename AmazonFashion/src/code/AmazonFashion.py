@@ -1,25 +1,24 @@
-"""
-Amazon Fashion, Code file
-AmeliaHZW, Applied Data Science (GR5069)
-"""
+## AmazonFashion Project
+## AmeliaHZW
+## Code File
 
-""" Import Packages """
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-""" Prepare Workspace """
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('max_colwidth',200)
 
 cwd = os.getcwd()
 
-""" Load in Data """
+
+
+
+
 df = pd.read_csv('amazon_co-ecommerce_sample.csv')
 
-""" Preprocessing and Wrangeling """
 df_t = pd.DataFrame()
 df_cat = df['amazon_category_and_sub_category'].str.split('>',expand = True)
 for i in range(0,5):
@@ -41,7 +40,7 @@ df_all = pd.concat([df, df_t, df_star, df_price], axis = 1)
 
 
 
-""" Function 1: return list of column names """
+
 def column_names():
     return [column for column in df_all]
     """
@@ -59,7 +58,7 @@ def column_names():
 
 
 
-""" Function 2: List of unique values for selected column"""
+
 def value_list(column = 'cat1'):
     """
     Using this function, you can get a list of unique values for a selected column.
@@ -81,7 +80,7 @@ def value_list(column = 'cat1'):
 
 
 
-""" Function 3: Average review rating or price by category"""
+""" Function 3: average review rating or price by category"""
 def category_avg_metric(metric, cat1 = 'cat1', cat2 = 'cat2'):
     """
     This function allows you to get the average review rating or price by category.
@@ -112,7 +111,7 @@ def category_avg_metric(metric, cat1 = 'cat1', cat2 = 'cat2'):
 
 
 
-""" Function 4: highest n review rating products"""
+
 def top_n_highest_review(n = 10, cat3 = 'Rail Vehicles'):
     """
     For a prespecified Category 3, what's the highest n review rating products?
@@ -138,7 +137,7 @@ def top_n_highest_review(n = 10, cat3 = 'Rail Vehicles'):
 
 
 
-""" Function 5: products available on Amazon about a certain manufacturer"""
+
 def manufacturer_product(manufacturer = 'LEGO'):
     """
     A function to check products available on Amazon about a certain manufacturer.
@@ -164,7 +163,7 @@ def manufacturer_product(manufacturer = 'LEGO'):
 
 
 
-""" Function 6: price distribution for the Category 2 that you specified"""
+
 def price_dist(cat2):
     """
     Using this function, you can get a price distribution for the Category 2 that you specified.
@@ -211,7 +210,7 @@ def price_dist(cat2):
 
 
 
-""" Function 7: store the results after text-cleaning and do some further analysis"""
+
 def export(path = cwd):
     """
     What if I want to store the results after text-cleaning and do some further analysis from my end?
