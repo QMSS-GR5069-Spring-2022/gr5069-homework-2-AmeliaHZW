@@ -22,8 +22,7 @@ pd.set_option('max_colwidth',200)
 cwd = os.getcwd()
 
 
-
-
+""" Load in your Data """
 
 df = pd.read_csv('amazon_co-ecommerce_sample.csv')
 
