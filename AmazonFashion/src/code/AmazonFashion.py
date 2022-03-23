@@ -1,13 +1,13 @@
 """
 Amazon Fashion, Code file
-AmeliaHZW, Applied Data Science
+AmeliaHZW, Applied Data Science (GR5069)
 """
 
-
+""" Import Packages """
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import os 
+import os
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
