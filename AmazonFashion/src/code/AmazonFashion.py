@@ -81,7 +81,7 @@ def value_list(column = 'cat1'):
 
 
 
-
+""" Function 3: Average review rating or price by category"""
 def category_avg_metric(metric, cat1 = 'cat1', cat2 = 'cat2'):
     """
     This function allows you to get the average review rating or price by category.
