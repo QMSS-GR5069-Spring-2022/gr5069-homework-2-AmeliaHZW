@@ -12,6 +12,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+
+""" Prepare your Workspace """
+
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('max_colwidth',200)
