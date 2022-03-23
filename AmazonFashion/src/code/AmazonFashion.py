@@ -9,14 +9,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+""" Prepare Workspace """
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('max_colwidth',200)
 
 cwd = os.getcwd()
-
-
-
 
 
 df = pd.read_csv('amazon_co-ecommerce_sample.csv')
