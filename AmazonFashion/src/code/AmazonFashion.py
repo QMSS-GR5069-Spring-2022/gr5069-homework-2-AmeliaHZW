@@ -112,7 +112,7 @@ def category_avg_metric(metric, cat1 = 'cat1', cat2 = 'cat2'):
 
 
 
-
+""" Function 4: highest n review rating products"""
 def top_n_highest_review(n = 10, cat3 = 'Rail Vehicles'):
     """
     For a prespecified Category 3, what's the highest n review rating products?
