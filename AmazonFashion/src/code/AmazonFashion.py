@@ -5,6 +5,7 @@ Amazon Fashion, Code file
 AmeliaHZW, Applied Data Science (GR5069)
 """
 
+""" Import the Packages """
 
 import numpy as np
 import pandas as pd
