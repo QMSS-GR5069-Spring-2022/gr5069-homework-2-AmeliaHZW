@@ -138,7 +138,7 @@ def top_n_highest_review(n = 10, cat3 = 'Rail Vehicles'):
 
 
 
-
+""" Function 5: products available on Amazon about a certain manufacturer"""
 def manufacturer_product(manufacturer = 'LEGO'):
     """
     A function to check products available on Amazon about a certain manufacturer.
@@ -164,7 +164,7 @@ def manufacturer_product(manufacturer = 'LEGO'):
 
 
 
-
+""" Function 6: price distribution for the Category 2 that you specified"""
 def price_dist(cat2):
     """
     Using this function, you can get a price distribution for the Category 2 that you specified.
@@ -211,7 +211,7 @@ def price_dist(cat2):
 
 
 
-
+""" Function 7: store the results after text-cleaning and do some further analysis"""
 def export(path = cwd):
     """
     What if I want to store the results after text-cleaning and do some further analysis from my end?
