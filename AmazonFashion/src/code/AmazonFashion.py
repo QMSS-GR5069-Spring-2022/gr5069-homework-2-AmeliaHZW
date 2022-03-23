@@ -1,3 +1,9 @@
+"""
+Amazon Fashion, Code file
+AmeliaHZW, Applied Data Science
+"""
+
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -22,7 +28,7 @@ for i in range(0,5):
     df_t = pd.concat([df_t, temp], axis = 1)
     i = i+1
 df_t.columns = ['cat1','cat2','cat3','cat4','cat5']
-    
+
 df['average_review_rating'] = df['average_review_rating'].apply(str)
 
 df_star = df['average_review_rating'].str.split('out of',expand = True)[0].astype(float)
@@ -42,13 +48,13 @@ def column_names():
     """
     This function is the start of the package, which returns a list of column names.
 
-    Examples 
+    Examples
     ----------
     >>> a.column_names()
-    ['uniq_id', 'product_name', 'manufacturer', 'price', 'number_available_in_stock', 'number_of_reviews', 
-    'number_of_answered_questions', 'average_review_rating', 'amazon_category_and_sub_category', 
-    'customers_who_bought_this_item_also_bought', 'description', 'product_information', 'product_description', 
-    'items_customers_buy_after_viewing_this_item', 'customer_questions_and_answers', 'customer_reviews', 'sellers', 
+    ['uniq_id', 'product_name', 'manufacturer', 'price', 'number_available_in_stock', 'number_of_reviews',
+    'number_of_answered_questions', 'average_review_rating', 'amazon_category_and_sub_category',
+    'customers_who_bought_this_item_also_bought', 'description', 'product_information', 'product_description',
+    'items_customers_buy_after_viewing_this_item', 'customer_questions_and_answers', 'customer_reviews', 'sellers',
     'cat1', 'cat2', 'cat3', 'cat4', 'cat5', 'avg_rating', 'p']
     """
 
@@ -59,7 +65,7 @@ def value_list(column = 'cat1'):
     """
     Using this function, you can get a list of unique values for a selected column.
 
-    Parameters 
+    Parameters
     ----------
     column: string indicating column name, if you would like to know what columns are available, please us column_names().
             Default value for this parameter is 'cat1'.
@@ -86,22 +92,22 @@ def category_avg_metric(metric, cat1 = 'cat1', cat2 = 'cat2'):
     metric: possibie values are 'rating' or 'price'; only include one at a time.
     cat1: the first category index you want to check.
     cat2: the second category index you want to check.
-    Note that cat1 and cat2 takes value from ['cat1','cat2', 'cat3', 'cat4','cat5'], we suggest that 
-        the first index is smaller than the second, so that you get a more structured return. Inputing 
+    Note that cat1 and cat2 takes value from ['cat1','cat2', 'cat3', 'cat4','cat5'], we suggest that
+        the first index is smaller than the second, so that you get a more structured return. Inputing
         the same index for both would yield a calculation only in one level of subcategory.
 
     Returns
     ----------
-    A dataframe of average review rating or price by the level category that you input. 
+    A dataframe of average review rating or price by the level category that you input.
 
     """
     assert metric in ['rating', 'price'], "Please input 'rating' or 'price' "
-    for category in [cat1, cat2]:  
+    for category in [cat1, cat2]:
         assert category in ['cat1','cat2', 'cat3', 'cat4','cat5'], "The index of Category should be between 1 and 5"
     if metric == 'rating':
-        df_cam = df_all['avg_rating'].groupby([df_all[cat1],df_all[cat2]]).mean()      
+        df_cam = df_all['avg_rating'].groupby([df_all[cat1],df_all[cat2]]).mean()
     if metric == 'price':
-        df_cam = df_all['p'].groupby([df_all[cat1],df_all[cat2]]).mean()      
+        df_cam = df_all['p'].groupby([df_all[cat1],df_all[cat2]]).mean()
     return df_cam
 
 
@@ -114,9 +120,9 @@ def top_n_highest_review(n = 10, cat3 = 'Rail Vehicles'):
 
     Parameters
     ----------
-    n: an integer indicating the ranking for rating review in this function. Default value is 10. 
+    n: an integer indicating the ranking for rating review in this function. Default value is 10.
     cat3: input the string for the Category 3 that you are interested in. Look up unique values
-        of Category 3 using value_list(column = 'cat3'). 
+        of Category 3 using value_list(column = 'cat3').
 
     Returns
     ----------
@@ -140,12 +146,12 @@ def manufacturer_product(manufacturer = 'LEGO'):
 
     Parameters
     ----------
-    manufacturer: a string of manufacturer name. Look up the manufacturer using 
-        value_list(column = 'manufacturer') if you don't know one. Default value is 'LEGO'. 
+    manufacturer: a string of manufacturer name. Look up the manufacturer using
+        value_list(column = 'manufacturer') if you don't know one. Default value is 'LEGO'.
 
-    Returns 
+    Returns
     ----------
-    Informations of products by that manufacturer that are sold on Amazon UK at present. 
+    Informations of products by that manufacturer that are sold on Amazon UK at present.
 
     """
     df_m = df_all[df_all['manufacturer']==manufacturer]
@@ -170,7 +176,7 @@ def price_dist(cat2):
 
     Returns
     ----------
-    Summary statistics of price for a certain Category 2, and a histogram of the price distribution. 
+    Summary statistics of price for a certain Category 2, and a histogram of the price distribution.
 
     Examples
     ----------
@@ -191,9 +197,9 @@ def price_dist(cat2):
     df_category = df_all[df_all['cat2'] == cat2]
     print(f'Summary Statistics for Category 2: {cat2} Price')
     print(df_category.p.describe())
-    
+
     p_mean = df_category.p.mean()
-    
+
     fig,ax = plt.subplots(1,1,figsize=(12,6))
     df_category.p.hist( ax = ax, bins='auto', color = 'cornflowerblue')
     ax.set_xlabel('price in £')
@@ -217,7 +223,7 @@ def export(path = cwd):
 
     Returns
     ----------
-    A saved csv file on local folder. 
+    A saved csv file on local folder.
 
     """
     df_save = df_all.rename({'p':'price (£)'})
