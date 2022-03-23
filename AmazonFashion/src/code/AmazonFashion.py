@@ -1,4 +1,5 @@
 """
+HW2 Excercise
 Amazon Fashion, Code file
 AmeliaHZW, Applied Data Science (GR5069)
 """
