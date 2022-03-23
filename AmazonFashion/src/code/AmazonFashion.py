@@ -1,6 +1,10 @@
-## AmazonFashion Project
-## AmeliaHZW
-## Code File
+
+"""
+HW2 Excercise
+Amazon Fashion, Code file
+AmeliaHZW, Applied Data Science (GR5069)
+"""
+
 
 import numpy as np
 import pandas as pd
